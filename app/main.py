@@ -31,7 +31,7 @@ while True:
 
 @app.get("/")
 def root():
-    return {"message": "Hello World successfully deployed from CI/CD"}
+    return {"message": "Hello World"}
 
 
 @app.get("/posts")

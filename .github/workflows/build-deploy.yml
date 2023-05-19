@@ -53,8 +53,6 @@ jobs:
       needs: [build]
 
       steps:
-        - name: pulling git repo
-          uses: actions/checkout@v3
         - name: deploying on Render
           run: |
             curl https://api.render.com/deploy/${{secrets.MY_RENDER_SERVICE_ID}}?key=${{secrets.MY_RENDER_API_KEY}}
