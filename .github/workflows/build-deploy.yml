@@ -54,8 +54,10 @@ jobs:
 
       steps:
         - name: deploying on Render
-          uses: johnbeynon/render-deploy-action@v0.0.8
-          with: 
-            service-id: ${{secrets.MY_RENDER_SERVICE_ID}}
-            api-key: ${{secrets.MY_RENDER_API_KEY}}
+          run: |
+            curl https://api.render.com/deploy/${{secrets.MY_RENDER_SERVICE_ID}}?key=${{secrets.MY_RENDER_API_KEY}}
+          # uses: johnbeynon/render-deploy-action@v0.0.8
+          # with: 
+          #   service-id: ${{secrets.MY_RENDER_SERVICE_ID}}
+          #   api-key: ${{secrets.MY_RENDER_API_KEY}}
 
